@@ -1,0 +1,84 @@
+{%include "pheader.html" %}
+
+  <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>Book Appointment</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Book Appointment</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+
+<div class="row contact-rooo no-margin">
+        <div class="container">
+           <div class="row">
+
+
+            <div style="padding:20px" class="col-sm-6">
+            <h2 style="font-size:18px"></h2>
+                <form action="/book_appointment_doctor" method="post">
+                <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><h6><label>Consulting&nbsp;Doctor:</label></h6></div>
+                    <div class="col-sm-8"><input type="text"  name="doct_uid" class="form-control input-sm" readonly  value="{{doct_id}}" required></div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><h6><label>Specialization&nbsp;In:</label></h6></div>
+                    <div class="col-sm-8"><input type="text" value="{{spec}}" placeholder="Enter Password" readonly class="form-control input-sm" required >
+
+                    </div>
+                </div>
+
+
+                    <div style="margin-top:10px;" class="row">
+                        <div style="padding-top:10px;" class="col-sm-3"><h6><label>Appointment Date :</label></h6></div>
+                    <div class="col-sm-8"><input type="date"  name="date" placeholder="" class="form-control input-sm" required ></div>
+                </div>
+
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+                        <button class="btn btn-danger btn-sm">Submit</button>
+                    </div>
+                </div><br><br>
+
+                    </form>
+            </div>
+
+             <div class="col-sm-3">
+
+                  <div style="margin:5px" class="serv">
+
+
+         <img src="{{ url_for('static',filename='assets/images/bapnt.jpg')}}" width="700px",height="500px" alt="">
+
+
+
+
+
+
+
+           </div>
+
+
+         </div>
+
+            </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+<br><br>
+
+{%include "footer.html" %}

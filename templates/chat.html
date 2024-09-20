@@ -1,0 +1,122 @@
+
+
+<head>
+<style> 
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid green;
+}
+</style>
+</head>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #fedadb;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #bcfebe;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+.time-right {
+    float: right;
+    color: #660033;
+}
+
+.time-left {
+    float: left;
+    color: #660000;
+}
+</style>
+</head>
+
+<style>
+table {
+ height: 500px;
+    width: 100%;
+    display:block;
+}
+thead {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+tbody {
+    height: 500px;
+    display: inline-block;
+    width: 100%;
+    overflow: auto;
+}
+</style>
+
+<body>
+<br><br><br>
+<!-- <table >
+<tr><td > -->
+{% for d in data %}
+<div class="container">
+
+  <p class="time-right"><b><font size="" color="blue">{{d.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></p>
+  <p class="time-left">{{d.message|linebreaks}}
+  </p>
+</div>
+
+
+					<form method="post" action="/chataction/">
+												 	{% csrf_token %} 
+
+							<h5>Your Message	</h5>
+						<input  type="text" name="message"  autofocus  value="{{msg}}">
+					</form>
+<!-- </table> -->
+
+
+
+
+</body>
+</html>
+<br><br><br>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,179 @@
+{%include "pheader.html" %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+</head>
+  <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>Disease Detection</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Prediction</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+
+<div class="row contact-rooo no-margin">
+        <div class="container">
+           <div class="row">
+
+
+            <div style="padding:20px" class="col-sm-6">
+
+
+                  <h5>Patient Name:<br><font color="blue"><h5>{{patient_info[0]}}</h5></font><br>
+                    <h5>Patient Age :<br><font color="blue"><h5>{{patient_info[1]}}</h5></font></br>
+                        <h5>Patient Gender:<br><font color="blue"><h5>{{patient_info[2]}}</h5></font><br>
+                            <h5>Selected City :<br><font color="blue"><h5>{{patient_info[3]}}</h5></font><br>
+
+                <h5>Selected&nbsp;Symptoms:<br><font color="blue"><h5>{{selected_symptoms}}</h5></font><br>
+                    <h5>Ditected Disease :<br><font color="blue"><h5>{{predicted_disease}}</h5></font></brfont>
+
+
+<br><br>
+
+
+
+
+Recommended Doctors:
+
+
+
+
+              <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+
+<table id="customers" align="center">
+{%  if rec_doct_list %}
+
+
+  <tr>
+    <th> Doctor&nbsp;Name</th>
+    <th>Gender</th>
+<th> Age</th>
+    <th>Specialization&nbsp;In</th>
+      <th>Type&nbsp&nbsp;of&nbsp;Medication</th>
+      <th>City</th>
+
+      <th>Rating</th>
+         <th>Action</th>
+  </tr>
+
+
+{%  for data in rec_doct_list %}
+	<tr><td><strong>{{data[0]}} </strong></td>
+		<td><strong>{{data[1]}}</strong></td>
+        <td><strong>{{data[2]}} </strong></td>
+		<td><strong>{{data[3]}}</strong></td>
+   <td><strong>{{data[4]}} </strong></td>
+        <td><strong>{{data[5]}} </strong></td>
+
+        <td><strong>{{data[11]}} </strong></td>
+         <td><br><strong><a href="http://localhost:2022/book_appointment/{{data[3]}}/{{data[7]}}/{{patient_info}}  "  class="btn btn-default filter-button">Book an Appointment </a></strong></td>
+
+</tr>
+{% endfor %}
+
+
+
+
+    {% else %}
+
+  <font color="red"> <h6> No Records Found.</h6></font>
+
+<br>
+    Available Doctors:
+
+    <table id="customers" align="left">
+  <tr>
+    <th> Doctor&nbsp;Name</th>
+    <th>Gender</th>
+<th> Age</th>
+    <th>Specialization&nbsp;In</th>
+      <th>Type&nbsp&nbsp;of&nbsp;Medication</th>
+      <th>City</th>
+
+      <th>Rating</th>
+         <th>Action</th>
+
+  </tr>
+
+
+{%  for data in available_doct_list %}
+	<tr><td><strong>{{data[0]}} </strong></td>
+		<td><strong>{{data[1]}}</strong></td>
+        <td><strong>{{data[2]}} </strong></td>
+		<td><strong>{{data[3]}}</strong></td>
+   <td><strong>{{data[4]}} </strong></td>
+        <td><strong>{{data[5]}} </strong></td>
+
+        <td><strong>{{data[11]}} </strong></td>
+         <td><br><strong><a href="http://localhost:2022/book_appointment/{{data[3]}}/{{data[7]}}/{{patient_info}}  "  class="btn btn-default filter-button">Book an Appointment </a></strong></td>
+
+</tr>
+
+{% endfor %}
+
+{% endif %}
+</table>
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+            </div>
+        </div>
+
+        </div></div>
+
+
+
+
+
+
+<br><br>
+
+{%include "footer.html" %}

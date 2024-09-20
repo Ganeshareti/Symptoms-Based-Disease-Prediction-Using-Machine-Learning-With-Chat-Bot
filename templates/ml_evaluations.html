@@ -1,0 +1,120 @@
+{%include "aheader.html" %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 18px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+</head>
+  <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>ML Evaluations</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Evaluations</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+
+<div class="row contact-rooo no-margin">
+        <div class="container">
+           <div class="row">
+
+
+            <div style="padding:20px" class="col-sm-6">
+
+
+
+
+
+
+
+              <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+
+<table id="customers" align="center">
+  <tr>
+    <th>ML&nbsp;Algorithm</th>
+    <th>Accuracy</th>
+<th> Precision</th>
+    <th>Recall</th>
+      <th>F1-Score</th>
+
+  </tr>
+
+{%  for data in metrics %}
+	<tr><td><strong>{{data[0]}} </strong></td>
+		<td><strong>{{data[1]}}</strong></td>
+        <td><strong>{{data[2]}} </strong></td>
+		<td><strong>{{data[3]}}</strong></td>
+   <td><strong>{{data[4]}} </strong></td>
+
+
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+            </div>
+        </div>
+<table align="center">
+    <tr><td><img src="{{ url_for('static',filename='accuracy.png')}}"  alt=""></td><td>  <img src="{{ url_for('static',filename='precision.png')}}"  alt=""></td></tr>
+
+ <tr><td><img src="{{ url_for('static',filename='recall.png')}}"  alt=""></td><td>  <img src="{{ url_for('static',filename='fscore.png')}}"  alt=""></td></tr>
+
+    </table>
+
+        </div>
+
+                         <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                             <!--<a href="ml_accuracy">Accuracy</a>
+                              <a href="ml_precision">Precision</a>-->
+
+            </div>
+
+
+
+
+
+{%include "footer.html" %}

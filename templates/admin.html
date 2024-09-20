@@ -1,0 +1,79 @@
+{%include "header.html" %}
+
+  <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>Admin</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Admin Login</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+
+
+			  {% if msg %}
+
+		<script>alert('Invalid Credentials')</script>
+
+    {% endif %}
+
+<div class="row contact-rooo no-margin">
+        <div class="container">
+           <div class="row">
+
+
+            <div style="padding:20px" class="col-sm-6">
+            <h2 style="font-size:18px"></h2>
+                   <form action="admin_login_check" method="post">
+                <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>User Name :</label></div>
+                    <div class="col-sm-8"><input type="text"  name="unm" class="form-control input-sm"  required></div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Password :</label></div>
+                    <div class="col-sm-8"><input type="password" name="pwd" placeholder="" class="form-control input-sm" required ></div>
+                </div>
+
+
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+                     <button class="btn btn-danger btn-sm">Submit</button>
+                    </div>
+                </div>
+                       </form>
+            </div>
+             <div class="col-sm-3">
+
+                  <div style="margin:5px" class="serv">
+
+
+         <img src="{{ url_for('static',filename='assets/images/administrator.png')}}"  alt="">
+
+
+
+
+
+
+
+           </div>
+
+
+         </div>
+
+            </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+{%include "footer.html" %}

@@ -1,0 +1,94 @@
+{%include "pheader.html" %}
+
+  <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>Disease Detection</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Prediction</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+
+
+ {% if msg %}
+
+		<script>alert('Appointment Booked Successfully..!')</script>
+
+    {% endif %}
+
+<div class="row contact-rooo no-margin">
+        <div class="container">
+           <div class="row">
+
+
+            <div style="padding:20px" class="col-sm-6">
+<form action="get_selected_symptoms" method="post" >
+                <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"></div>
+                    <div class="col-sm-8">
+
+                        <h6>Select Symptoms</h6>
+
+ <select name="symptom"  multiple class="form-control input-sm" style="width:700px;height:500px" required>
+                   {% for symptom in symptoms:%}
+
+                         <option value="{{symptom}}">{{symptom}}</option>
+
+                    {% endfor %}
+
+                     </select>
+
+
+                    </div>
+                </div>
+
+
+              <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+                        		<input type="submit" class="btn btn-danger btn-sm" value="Disease Prediction">
+
+                    </div>
+                </div>
+
+    <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"></div>
+                    <div class="col-sm-8"></div>
+                </div>
+    <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"></div>
+                    <div class="col-sm-8"></div>
+                </div>    <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"></div>
+                    <div class="col-sm-8"></div>
+                </div>
+
+<div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"></div>
+                    <div class="col-sm-8"></div>
+                </div>
+
+
+</form>
+            </div>
+
+
+
+
+            </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+<br><br>
+
+{%include "footer.html" %}

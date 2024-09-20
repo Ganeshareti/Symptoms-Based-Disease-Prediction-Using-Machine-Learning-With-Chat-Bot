@@ -1,0 +1,132 @@
+
+<style type="text/css">
+	input, select, textarea {
+		color: #888;
+		font-family: "Lato", sans-serif;
+		font-size: 16pt;
+		font-weight: 400;
+		line-height: 1.75em;
+	    border-radius: 5px;
+
+	}
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.container22 {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 1px;
+    margin: 1px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.container22::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container22 img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container22 img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
+</style>
+</head>
+
+<style>
+table {
+
+    width: 100%;
+
+}
+thead {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+tbody {
+
+    display: inline-block;
+    width: 100%;
+
+}
+</style>
+
+<body>
+<br><br><br>
+<!-- <table >
+<tr><td > -->
+
+
+{%  for data in rawdata %}
+
+
+		{% if data[2]=="chatbot" %}
+<div class="container22">
+     <img src="{{ url_for('static',filename='assets/images/rbt.png')}}" alt="Avatar">
+
+  <p class="time-left">{{data[1]}}</p>
+  <span class="time-right">{{data[3]}}</span>
+</div>
+{% else %}
+<div class="container22 darker">
+       <img src="{{ url_for('static',filename='assets/images/bg3.jpg')}}" alt="Avatar" class="right">
+  <p class="time-right" >{{data[1]}}</p>
+  <span class="time-left">{{data[3]}}</span>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+
+
+					<form method="post" action="/chatbot3">
+
+                 
+
+
+<table >
+<tr >
+	<td  align="right" style="text-align:right">
+						<input autofocus type="text" size="55" width="100%" name="text" class="" autofocus placeholder="Type Here">
+						</form>
+</td>
+</tr>
+
+</table>
+
+
+

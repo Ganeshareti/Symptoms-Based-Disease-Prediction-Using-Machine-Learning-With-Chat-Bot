@@ -1,0 +1,168 @@
+{%include "header.html" %}
+
+  <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>Doctor</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Doctor Registration</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+
+
+			 {% if msg %}
+
+		<script>alert('User Id already exists..!')</script>
+
+    {% endif %}
+
+<div class="row contact-rooo no-margin">
+        <div class="container">
+           <div class="row">
+
+
+            <div style="padding:20px" class="col-sm-6">
+<form action="doctor_reg_store" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Name :</label></div>
+                    <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm" required ></div>
+                </div>
+                 <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Gender :</label></div>
+                    <div class="col-sm-8">
+                          <select name="gen"  class="form-control input-sm" required>
+								<option value="Male" >Male
+								<option value="Female">Female
+
+							</select>
+
+                    </div>
+                </div>
+     <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Doctor Age:</label></div>
+                    <div class="col-sm-8"><input type="number" name="age" placeholder="Enter Age" class="form-control input-sm" required ></div>
+                </div>
+                <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Doctor Specialization  :</label></div>
+                    <div class="col-sm-8">
+                           <select name="prof"  class="form-control input-sm" required>
+								<option value="Rheumatologist" selected>Rheumatologist
+								<option value="Cardiologist">Cardiologist
+							<option value="ENT_specialist ">ENT_specialist
+								<option value="Neurologist">Neurologist
+								<option value="Allergist/Immunologist">Allergist/Immunologist
+								<option value="Urologist">Urologist
+								<option value="Dermatologist">Dermatologist
+								<option value="Gastroenterologist">Gastroenterologist
+
+							</select>
+                    </div>
+                </div>
+
+            <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Type of Medication :</label></div>
+                    <div class="col-sm-8">
+                           <select name="medication"  class="form-control input-sm" required>
+								<option value="">Select
+								<option value="Ayurvedic">Ayurvedic
+							<option value="Allopathy">Allopathy
+								<option value="Homeopathy">Homeopathy
+
+							</select>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>City :</label></div>
+                    <div class="col-sm-8">
+                           <select name="city"  class="form-control input-sm" required>
+								<option value="">Select
+								<option value="Hyderabad">Hyderabad
+							<option value="Bangalore">Bangalore
+								<option value="Mumbai">Mumbai
+								<option value="Delhi">Delhi
+								<option value="Chennai">Chennai
+								<option value="Kolkata">Kolkata
+
+
+							</select>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>User ID:</label></div>
+                    <div class="col-sm-8"><input type="text" name="uid" placeholder="Enter User ID" class="form-control input-sm"  required></div>
+                </div>
+
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Password:</label></div>
+                    <div class="col-sm-8"><input type="password" name="pwd" placeholder="Enter Password" class="form-control input-sm"  required></div>
+                </div>
+
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Mobile Number:</label></div>
+                    <div class="col-sm-8"><input type="text" name="mno" pattern="[0-9]{10,10}" placeholder="Enter Mobile Number" class="form-control input-sm" required ></div>
+                </div>
+  <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Upload Picture:</label></div>
+                    <div class="col-sm-8"><input type="file" name="file"  class="form-control input-sm"  required></div>
+                </div>
+
+<div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Working Area:</label></div>
+    <div class="col-sm-8"><textarea  name="adrs" required class="form-control input-sm" ></textarea></div>
+                </div>
+
+
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+                     <button class="btn btn-danger btn-sm">Register</button>
+                    </div>
+                </div>
+    </form>
+            </div>
+
+
+             <div class="col-sm-3">
+
+                  <div style="margin:5px" class="serv">
+
+
+         <img src="{{ url_for('static',filename='assets/images/dctr.png')}}"  alt="">
+
+
+
+
+
+
+
+           </div>
+
+
+         </div>
+
+            </div>
+        </div>
+
+      </div>
+
+
+
+
+
+<br><br>
+
+{%include "footer.html" %}
