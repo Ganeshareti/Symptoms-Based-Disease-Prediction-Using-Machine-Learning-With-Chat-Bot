@@ -47,7 +47,7 @@ This is a web application that predicts diseases based on symptoms provided by t
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <repository_url>
+    git clone git@github.com:Ganeshareti/Symptoms-Based-Disease-Prediction-Using-Machine-Learning-With-Chat-Bot.git
     cd Symptoms-Based-Disease-Prediction-Using-Machine-Learning-With-Chat-Bot
     ```
 
